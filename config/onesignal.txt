@@ -1,0 +1,3 @@
+APIREST = os_v2_app_xxrpiss2pjhupnxwesgnq2hzdcskuk4piggexlnhxqwualoejeyzu4jmuo6huczlnqzsyinnbaqam6o4myefcbfhqultno2ecrl3ofi
+APPID = bde2f44a-5a7a-4f47-b6f6-248cd868f918
+

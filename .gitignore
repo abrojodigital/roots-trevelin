@@ -1,0 +1,55 @@
+# Ignorar archivos y carpetas generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar configuraciones de entorno
+.env
+
+# Ignorar dependencias de Composer
+/vendor/
+
+# Ignorar cachés y logs
+/storage/
+*.log
+
+# Ignorar archivos de IDEs
+.idea/
+.vscode/
+
+# Ignorar archivos de PHPUnit
+.phpunit.result.cache
+
+# Ignorar archivos de implementación
+*.sql
+*.sqlite
+*.bak
+
+# Ignorar carpetas de caché
+/cache/
+/tmp/
+
+# Ignorar archivos específicos
+./admin/crear_admin.php
+
+# Ignorar archivos de imagenes de alumnos
+/assets/img/alumnos/*.jpg
+
+# Ignorar variables de entorno
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local.php
+.env.development.php
+.env.test.php
+.env.production.php
+
+# Ignorar carpetas y archivos de Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignorar carpetas y archivos de Expo
+.expo/
+.expo-shared/
