@@ -1,0 +1,31 @@
+RewriteEngine On
+
+# Redirigir todas las peticiones al index.php excepto archivos y directorios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Permitir acceso a archivos estáticos
+<Files "*.css">
+    Header set Access-Control-Allow-Origin "*"
+</Files>
+
+<Files "*.js">
+    Header set Access-Control-Allow-Origin "*"
+</Files>
+
+<Files "*.png">
+    Header set Access-Control-Allow-Origin "*"
+</Files>
+
+<Files "*.jpg">
+    Header set Access-Control-Allow-Origin "*"
+</Files>
+
+<Files "*.jpeg">
+    Header set Access-Control-Allow-Origin "*"
+</Files>
+
+<Files "*.gif">
+    Header set Access-Control-Allow-Origin "*"
+</Files> 
