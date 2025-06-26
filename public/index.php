@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use App\Core\Config;
 use App\Core\Router;
 use App\Controllers\AuthController;
 use App\Controllers\DashboardController;
@@ -13,9 +14,12 @@ use App\Controllers\ApiController;
 use App\Controllers\ReporteController;
 use App\Controllers\NotificacionController;
 
+// Cargar configuración
+Config::load();
+
 // Configurar manejo de errores
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', Config::env('APP_DEBUG', false) ? 1 : 0);
 
 // Iniciar sesión
 session_start();
