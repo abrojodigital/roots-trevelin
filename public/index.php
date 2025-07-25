@@ -5,7 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use App\Core\Config;
 use App\Core\Router;
 use App\Controllers\AuthController;
-use App\Controllers\DashboardController;
+
 use App\Controllers\UsuarioController;
 use App\Controllers\AlumnoController;
 use App\Controllers\CursoController;
@@ -34,7 +34,7 @@ $router->post('/login', [AuthController::class, 'login']);
 $router->get('/logout', [AuthController::class, 'logout']);
 
 // ==================== RUTAS DEL DASHBOARD ====================
-$router->get('/dashboard', [DashboardController::class, 'index']);
+$router->get('/dashboard', [AdminController::class, 'dashboard']);
 
 // ==================== RUTAS DE USUARIOS ====================
 $router->get('/usuarios', [UsuarioController::class, 'index']);
@@ -109,11 +109,6 @@ $router->get('/notificaciones/historial', [NotificacionController::class, 'histo
 $router->get('/notificaciones/estadisticas', [NotificacionController::class, 'estadisticas']);
 
 // ==================== RUTAS DE MANTENIMIENTO ====================
-$router->get('/logs', function() {
-    // Vista de logs del sistema
-    echo "Sistema de Logs";
-});
-
 $router->get('/cache/clear', function() {
     // Limpiar caché
     $cache = \App\Core\Cache::getInstance();

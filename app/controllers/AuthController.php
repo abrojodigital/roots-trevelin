@@ -54,4 +54,27 @@ class AuthController extends Controller
         
         return $this->renderWithLayout('auth/welcome');
     }
+
+    public function welcome()
+    {
+        if ($this->getSession('admin')) {
+            $this->redirect('/dashboard');
+        }
+        
+        return $this->renderWithLayout('auth/welcome');
+    }
+
+    public function showLogin()
+    {
+        if ($this->getSession('admin')) {
+            $this->redirect('/dashboard');
+        }
+        
+        $error = $this->getSession('error');
+        $this->unsetSession('error');
+        
+        return $this->renderWithLayout('auth/login', [
+            'error' => $error
+        ]);
+    }
 } 

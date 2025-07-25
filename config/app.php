@@ -48,10 +48,6 @@ return [
                 'driver' => 'file',
                 'path' => storage_path('framework/cache/data'),
             ],
-            'redis' => [
-                'driver' => 'redis',
-                'connection' => 'cache',
-            ],
         ],
         'prefix' => 'roots_cache',
     ],
@@ -69,69 +65,7 @@ return [
                 'path' => storage_path('logs/roots.log'),
                 'level' => env('LOG_LEVEL', 'debug'),
             ],
-            'daily' => [
-                'driver' => 'daily',
-                'path' => storage_path('logs/roots.log'),
-                'level' => env('LOG_LEVEL', 'debug'),
-                'days' => 14,
-            ],
         ],
-    ],
-    
-    'mail' => [
-        'default' => env('MAIL_MAILER', 'smtp'),
-        'mailers' => [
-            'smtp' => [
-                'transport' => 'smtp',
-                'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-                'port' => env('MAIL_PORT', 587),
-                'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-                'username' => env('MAIL_USERNAME'),
-                'password' => env('MAIL_PASSWORD'),
-                'timeout' => null,
-                'local_domain' => env('MAIL_EHLO_DOMAIN'),
-            ],
-        ],
-        'from' => [
-            'address' => env('MAIL_FROM_ADDRESS', 'noreply@instituto-ingles.com'),
-            'name' => env('MAIL_FROM_NAME', 'Instituto de Inglés Roots'),
-        ],
-    ],
-    
-    'filesystems' => [
-        'default' => env('FILESYSTEM_DISK', 'local'),
-        'disks' => [
-            'local' => [
-                'driver' => 'local',
-                'root' => storage_path('app'),
-            ],
-            'public' => [
-                'driver' => 'local',
-                'root' => storage_path('app/public'),
-                'url' => env('APP_URL').'/storage',
-                'visibility' => 'public',
-            ],
-        ],
-    ],
-    
-    'security' => [
-        'csrf' => [
-            'enabled' => true,
-            'token_name' => '_token',
-            'expire' => 60,
-        ],
-        'password' => [
-            'min_length' => 8,
-            'require_uppercase' => true,
-            'require_lowercase' => true,
-            'require_numbers' => true,
-            'require_symbols' => false,
-        ],
-    ],
-    
-    'pagination' => [
-        'default_per_page' => 15,
-        'max_per_page' => 100,
     ],
     
     'uploads' => [
